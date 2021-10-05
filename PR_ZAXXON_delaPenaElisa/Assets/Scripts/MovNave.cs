@@ -18,7 +18,7 @@ public class MovNave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = new Vector3(0, 0.7f, 0f);
     }
 
     // Update is called once per frame
