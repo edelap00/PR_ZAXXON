@@ -8,10 +8,12 @@ public class MovNave : MonoBehaviour
     //variables
     public float speedX = 5.0f;
     public float speedY = 3.0f;
-    float limRight = 10;
-    float limLeft = 10;
-    float limUp = 10;
-    float limDown = 10;
+    float limRight = 3;
+    float limLeft = -3;
+    float limUp = 4;
+    float limDown = 0.2f;
+    bool inLimitH;
+    [SerializeField] bool inLimitV = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,24 +24,59 @@ public class MovNave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //mov eje 1
-        float desplY = Input.GetAxis("Vertical") * speedY;
-        transform.Translate(Vector3.up * desplY * Time.deltaTime);
+        MoverNave();
 
-        //mov eje 2
+    }
+
+    void MoverNave()
+    {
+        
+        //mov eje X
         float desplX = Input.GetAxis("Horizontal") * speedX;
-        transform.Translate(Vector3.right * desplX * Time.deltaTime);
+
+       //mov eje Y
+        float desplY = Input.GetAxis("Vertical") * speedY;
+       
 
         //código para restricción
 
         float posX = transform.position.x;
         float posY = transform.position.y;
-        
-        if(posX>=limRight && desplX > 0)
-        {
-            desplX = 0;
-        } else { }
 
+        if (posX >= limRight && desplX > 0 || posX<=limLeft && desplX < 0)
+        {
+           inLimitH=false;
+        }
+        else { inLimitH=true; }
+
+        if (inLimitH)
+        {
+        transform.Translate(Vector3.right * desplX * Time.deltaTime);
+        }
+
+        if (posY >= limUp && desplY > 0 || posY <= limDown && desplY < 0)
+        {
+            inLimitV = false;
+        }
+        else { inLimitV = true; }
+
+        if (inLimitV)
+        {
+            transform.Translate(Vector3.up * desplY * Time.deltaTime);
+        }
+
+        /*
+         Otra opción para la resticción: con booleanas de limites verticales y horizontales
+        
+        if (inLimitH){linea de desplazamiento horizontal (transform.Translate(Vect....}   y lo mismo para el horizontal
+
+         Determinación de límites
+        if(posX>=limRight && desplX > 0 o se da otra en la que no quieras moverte)
+        {
+            inLimit=false;
+        } else  { inLimit=true }
+        
+         */
 
     }
 }
