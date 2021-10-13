@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InitGame : MonoBehaviour
 {
+    InitGame initGame;
 
     public float naveSpeed;
 
@@ -11,6 +12,7 @@ public class InitGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    
         
     }
 
