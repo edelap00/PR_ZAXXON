@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6952591381811041292}
-  m_Layer: 0
+  - component: {fileID: -6612781491546955994}
+  m_Layer: 6
   m_Name: obstac2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &-6612781491546955994
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526424171432834710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2580806961232547563
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +58,7 @@ GameObject:
   - component: {fileID: 7074919551410965280}
   - component: {fileID: 7213341755794418855}
   - component: {fileID: 9107677184282129602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

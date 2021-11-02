@@ -25,6 +25,7 @@ public class MovNave : MonoBehaviour
     void Update()
     {
         MoverNave();
+    
 
     }
 
@@ -78,5 +79,15 @@ public class MovNave : MonoBehaviour
         
          */
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("kaboom");
+
+        if (other.gameObject.layer == 6)
+        {
+            print("Soy una pelota");
+        }
     }
 }
