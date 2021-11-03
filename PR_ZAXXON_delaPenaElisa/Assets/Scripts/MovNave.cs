@@ -8,17 +8,22 @@ public class MovNave : MonoBehaviour
     //variables
     public float speedX = 5.0f;
     public float speedY = 3.0f;
-    float limRight = 3;
-    float limLeft = -3;
-    float limUp = 4;
-    float limDown = 0.2f;
+    float limRight = 5;
+    float limLeft = -5;
+    float limUp = 3;
+    float limDown = 0.5f;
     bool inLimitH;
     [SerializeField] bool inLimitV = true;
-
+    InitGame initGame;
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(0, 0.7f, 0f);
+
+       
+        initGame = GameObject.Find("initGame").GetComponent<InitGame>();
+        speedX = initGame.naveSpeed;
+        speedY = initGame.naveSpeed * 0.5f;
     }
 
     // Update is called once per frame

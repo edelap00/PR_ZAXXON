@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6952591381811041292}
   - component: {fileID: -6612781491546955994}
+  - component: {fileID: -921982500135525049}
   m_Layer: 6
   m_Name: obstac2
   m_TagString: Untagged
@@ -46,6 +47,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-921982500135525049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526424171432834710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12a0bb0c10c83e43a8654f429141e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2580806961232547563
 GameObject:
   m_ObjectHideFlags: 0
