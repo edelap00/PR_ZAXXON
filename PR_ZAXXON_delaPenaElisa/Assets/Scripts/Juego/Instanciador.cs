@@ -8,24 +8,26 @@ public class Instanciador : MonoBehaviour
     [SerializeField] Transform initPos;
     [SerializeField] float intervalo ;
     //variable columnas iniciales
-    [SerializeField] float distanciaObstaculos = 30;
-    [SerializeField] float primerObstaculo = 50;
+    float distanciaObstaculos = 20;
+    float primerObstaculo = 30f;
     [SerializeField] GameObject[] arrayObst;
     
     // Start is called before the first frame update
     void Start()
     {
         intervalo = 2f;
+        
         //COLUMNAS INICIALES
         float numColumnas = (transform.position.z - primerObstaculo) / distanciaObstaculos;
 
         for(float n= primerObstaculo; n <transform.position.z; n+=distanciaObstaculos)
         {
-            Vector3 initColPos = new Vector3(Random.Range(-3f, 3f), 0f,n);
+            Vector3 initColPos = new Vector3(Random.Range(-7f, 7f), 0f,n);
+            print(initColPos);
             int randomNum = Random.Range(0, arrayObst.Length);
-            Instantiate(arrayObst[randomNum]);
+            Instantiate(arrayObst[randomNum], initColPos, Quaternion.identity);
         }
-
+        
         //INSTANCIAS DEL MÄS ALLÄ
         StartCoroutine("Instanciar"); 
     }
@@ -43,7 +45,7 @@ public class Instanciador : MonoBehaviour
         for (; ; )
         {
             int randomNum = Random.Range(0, arrayObst.Length);
-            Instantiate(arrayObst[randomNum], new Vector3(Random.Range(-4f, 4f), 0f, initPos.position.z), Quaternion.identity);
+            Instantiate(arrayObst[randomNum], new Vector3(Random.Range(-7f, 7f), 0f, initPos.position.z), Quaternion.identity);
            
             yield return new WaitForSeconds(intervalo);
         }

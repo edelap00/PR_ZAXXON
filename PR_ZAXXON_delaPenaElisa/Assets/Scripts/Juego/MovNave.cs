@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovNave : MonoBehaviour
 
@@ -8,8 +9,8 @@ public class MovNave : MonoBehaviour
     //variables
     public float speedX = 5.0f;
     public float speedY = 3.0f;
-    float limRight = 5;
-    float limLeft = -5;
+    float limRight = 8;
+    float limLeft = -8;
     float limUp = 3;
     float limDown = 0.5f;
     bool inLimitH;
@@ -88,11 +89,11 @@ public class MovNave : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("kaboom");
+        //print("kaboom");
 
         if (other.gameObject.layer == 6)
         {
-            print("Soy una pelota");
+            initGame.Morir();
         }
     }
 }

@@ -35,5 +35,7 @@ public class InitGame : MonoBehaviour
             
         }
 
+        SceneManager.LoadScene(3);
+
     }
 }

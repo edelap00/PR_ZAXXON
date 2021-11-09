@@ -18,7 +18,7 @@ public class Botones : MonoBehaviour
         
     }
 
-   void Salir()
+   public void Salir()
     {
         Application.Quit();
     }
