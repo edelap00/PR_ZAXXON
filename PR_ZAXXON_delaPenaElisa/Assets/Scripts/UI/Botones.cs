@@ -18,23 +18,9 @@ public class Botones : MonoBehaviour
         
     }
 
-    public void Empezar()
+  
+    public void CargarEscena (int scene)
     {
-        SceneManager.LoadScene(2);
-    }
-
-   public void Config()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-   public void Volver()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void Salir()
-    {
-
+        SceneManager.LoadScene(scene);
     }
 }
