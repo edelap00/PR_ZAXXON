@@ -521,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 9243811}
   distancia: 4
-  altura: 1
+  altura: 1.73
 --- !u!1 &1131322751
 GameObject:
   m_ObjectHideFlags: 0

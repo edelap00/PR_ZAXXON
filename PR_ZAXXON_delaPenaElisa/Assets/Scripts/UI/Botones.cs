@@ -18,7 +18,10 @@ public class Botones : MonoBehaviour
         
     }
 
-  
+   void Salir()
+    {
+        Application.Quit();
+    }
     public void CargarEscena (int scene)
     {
         SceneManager.LoadScene(scene);

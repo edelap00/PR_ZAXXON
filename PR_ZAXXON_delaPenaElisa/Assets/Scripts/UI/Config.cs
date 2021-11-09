@@ -1,39 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-public class InitGame : MonoBehaviour
+public class Config : MonoBehaviour
 {
-  
-
-    public float naveSpeed;
-    public int score = 0;
-
+    [SerializeField] Slider volumeSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-     naveSpeed = 7f;
-        
-        
+        volumeSlider.value = GameManager.volume;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
         
     }
 
-    public void Morir()
+    public void CambiarVolumen()
     {
-        if (score > GameManager.highscore)
-        {
-            GameManager.highscore = score;
-            
-        }
-
+        GameManager.volume = volumeSlider.value;
     }
 }
