@@ -22,7 +22,7 @@ public class Instanciador : MonoBehaviour
 
         for(float n= primerObstaculo; n <transform.position.z; n+=distanciaObstaculos)
         {
-            Vector3 initColPos = new Vector3(Random.Range(-7f, 7f), 0f,n);
+            Vector3 initColPos = new Vector3(Random.Range(-7f, 7f), Random.Range(0, 5f), n);
             print(initColPos);
             int randomNum = Random.Range(0, arrayObst.Length);
             Instantiate(arrayObst[randomNum], initColPos, Quaternion.identity);
@@ -45,7 +45,7 @@ public class Instanciador : MonoBehaviour
         for (; ; )
         {
             int randomNum = Random.Range(0, arrayObst.Length);
-            Instantiate(arrayObst[randomNum], new Vector3(Random.Range(-7f, 7f), 0f, initPos.position.z), Quaternion.identity);
+            Instantiate(arrayObst[randomNum], new Vector3(Random.Range(-7f, 7f), Random.Range(0, 5f), initPos.position.z), Quaternion.identity);
            
             yield return new WaitForSeconds(intervalo);
         }

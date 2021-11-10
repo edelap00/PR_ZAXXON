@@ -11,7 +11,7 @@ public class MovNave : MonoBehaviour
     public float speedY = 3.0f;
     float limRight = 8;
     float limLeft = -8;
-    float limUp = 3;
+    float limUp = 6;
     float limDown = 0.5f;
     bool inLimitH;
     [SerializeField] bool inLimitV = true;
@@ -91,9 +91,17 @@ public class MovNave : MonoBehaviour
     {
         //print("kaboom");
 
-        if (other.gameObject.layer == 6)
+        switch (other.gameObject.layer)
         {
-            initGame.Morir();
+            case 6:
+ initGame.Morir();
+                break;
+            case 7:
+                initGame.punt++;
+                //Destroy(gameObject);
+                print("Tienes un punto! puntos:" + initGame.punt);
+                break;
         }
+        
     }
 }

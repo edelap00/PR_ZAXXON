@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class InitGame : MonoBehaviour
 {
-  
+   public int punt = 0;
 
     public float naveSpeed;
-    public int score = 0;
+    
 
 
     // Start is called before the first frame update
@@ -29,9 +29,9 @@ public class InitGame : MonoBehaviour
 
     public void Morir()
     {
-        if (score > GameManager.highscore)
+        if (punt > GameManager.highscore)
         {
-            GameManager.highscore = score;
+            GameManager.highscore = punt;
             
         }
 
