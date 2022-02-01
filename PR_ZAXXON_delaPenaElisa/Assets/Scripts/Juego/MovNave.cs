@@ -19,6 +19,7 @@ public class MovNave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.punt = 0;
         transform.position = new Vector3(0, 0.7f, 0f);
 
        
@@ -94,10 +95,10 @@ public class MovNave : MonoBehaviour
         switch (other.gameObject.layer)
         {
             case 6:
- initGame.Morir();
+               initGame.Morir();
                 break;
             case 7:
-                initGame.punt++;
+                GameManager.punt++;
                 //Destroy(gameObject);
                 print("Tienes un punto! puntos:" + initGame.punt);
                 break;
