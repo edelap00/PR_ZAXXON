@@ -7,29 +7,32 @@ public class Instanciador : MonoBehaviour
     [SerializeField] GameObject obst;
     [SerializeField] Transform initPos;
     [SerializeField] float intervalo ;
+    [SerializeField] float intervalo2;
     //variable columnas iniciales
     float distanciaObstaculos = 20;
     float primerObstaculo = 30f;
     [SerializeField] GameObject[] arrayObst;
-    
+    [SerializeField] GameObject[] arrayAround;
+
     // Start is called before the first frame update
     void Start()
     {
         intervalo = 2f;
-        
+        intervalo2 = Random.Range(0.5f, 2f);
         //COLUMNAS INICIALES
         float numColumnas = (transform.position.z - primerObstaculo) / distanciaObstaculos;
 
         for(float n= primerObstaculo; n <transform.position.z; n+=distanciaObstaculos)
         {
             Vector3 initColPos = new Vector3(Random.Range(-7f, 7f), Random.Range(0, 5f), n);
-            print(initColPos);
+           
             int randomNum = Random.Range(0, arrayObst.Length);
             Instantiate(arrayObst[randomNum], initColPos, Quaternion.identity);
         }
         
         //INSTANCIAS DEL MÄS ALLÄ
-        StartCoroutine("Instanciar"); 
+        StartCoroutine("Instanciar");
+        StartCoroutine("InstanceAround");
     }
 
     // Update is called once per frame
@@ -40,15 +43,44 @@ public class Instanciador : MonoBehaviour
 
     IEnumerator Instanciar ()
     {
-     
+        Vector3 instanciaArray = new Vector3 ( Random.Range(-7f, 7f), Random.Range(0, 5f), initPos.position.z);
 
         for (; ; )
         {
+
             int randomNum = Random.Range(0, arrayObst.Length);
-            Instantiate(arrayObst[randomNum], new Vector3(Random.Range(-7f, 7f), Random.Range(0, 5f), initPos.position.z), Quaternion.identity);
+            if (arrayObst[randomNum].layer == 6)
+            {
+                instanciaArray= new Vector3( Random.Range(-7f, 7f), 0f, initPos.position.z);
+            } else {
+                instanciaArray = new Vector3(Random.Range(-7f, 7f), Random.Range(0, 6f), initPos.position.z);
+            }
+
+            Instantiate(arrayObst[randomNum], instanciaArray, Quaternion.identity);
            
             yield return new WaitForSeconds(intervalo);
         }
 
+    }
+
+    IEnumerator InstanceAround ()
+    {
+        
+
+        for (; ; )
+        {
+            Vector3 instanciaAround = new Vector3(Random.Range(-70f, -7f), 0f, initPos.position.z);
+            Vector3 instanciaAround2 = new Vector3(Random.Range(7f, 70f), 0f, initPos.position.z + 1f);
+            print(instanciaAround2);
+
+            int randomNum = Random.Range(0, arrayAround.Length);
+       
+
+            Instantiate(arrayAround[randomNum], instanciaAround, Quaternion.identity);
+            Instantiate(arrayAround[randomNum], instanciaAround2, Quaternion.identity);
+
+            yield return new WaitForSeconds(intervalo2);
+        }
+     
     }
 }
