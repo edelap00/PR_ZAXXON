@@ -20,8 +20,12 @@ public class Botones : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        //punt.text = initGame.punt.ToString();
-        punt.text = "Puntos: " + GameManager.punt;
+        
+        if (punt != null)
+        {
+            punt.text = "Puntos: " + GameManager.punt;
+        }
+        
        
     }
 
