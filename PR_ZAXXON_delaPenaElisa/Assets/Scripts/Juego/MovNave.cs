@@ -9,14 +9,16 @@ public class MovNave : MonoBehaviour
     //variables
     public float speedX = 5.0f;
     public float speedY = GameManager.speed;
-    float limRight = 8;
-    float limLeft = -8;
+    float limRight = 15.5f;
+    float limLeft = -15.5f;
     float limUp = 6;
     float limDown = -0.5f;
     bool inLimitH;
     bool disparo;
     [SerializeField] bool inLimitV = true;
     InitGame initGame;
+    [SerializeField] GameObject instanciaBala;
+    [SerializeField] GameObject bolaFuego;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,8 +106,17 @@ public class MovNave : MonoBehaviour
                 break;
             case 7:
                 GameManager.punt++;
-                //Destroy(gameObject);
+                Destroy(other.gameObject);
                 print("Tienes un punto! puntos:" + GameManager.punt);
+                if (GameManager.punt > GameManager.highscore)
+                {
+                    GameManager.highscore = GameManager.punt;
+                }
+                break;
+
+            case 8:
+                break;
+            case 9:
                 break;
         }
         
@@ -115,6 +126,8 @@ public class MovNave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            Instantiate(bolaFuego, instanciaBala.transform);
+            
             print("pium pium");
         }
 

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     //variables y métodos estáticos (públicas)
 
     public static float volume=20f;
-    public static int highscore=0;
+    public static float highscore=0;
     public static float punt = 0;
     public static float speed = 7f;
 

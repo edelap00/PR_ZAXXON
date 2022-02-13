@@ -23,7 +23,12 @@ void Update()
         
         if (punt != null)
         {
-            punt.text = "Puntuación: " + GameManager.punt;
+            punt.text = "Gemas: " + GameManager.punt;
+        }
+
+        if (puntfin != null)
+        {
+            puntfin.text = "Tu récord de hoy han sido " + GameManager.highscore + " gemas";
         }
         
        
