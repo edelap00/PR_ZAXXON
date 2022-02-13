@@ -23,7 +23,7 @@ void Update()
         
         if (punt != null)
         {
-            punt.text = "Puntos: " + GameManager.punt;
+            punt.text = "Puntuación: " + GameManager.punt;
         }
         
        

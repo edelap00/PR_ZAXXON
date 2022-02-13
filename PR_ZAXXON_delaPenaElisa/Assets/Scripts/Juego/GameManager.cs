@@ -9,5 +9,6 @@ public class GameManager : MonoBehaviour
     public static float volume=20f;
     public static int highscore=0;
     public static float punt = 0;
+    public static float speed = 7f;
 
 }

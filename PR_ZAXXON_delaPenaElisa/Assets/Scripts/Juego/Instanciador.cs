@@ -14,11 +14,12 @@ public class Instanciador : MonoBehaviour
     [SerializeField] GameObject[] arrayObst;
     [SerializeField] GameObject[] arrayAround;
 
+
     // Start is called before the first frame update
     void Start()
     {
         intervalo = 2f;
-        intervalo2 = Random.Range(0.5f, 2f);
+        
         //COLUMNAS INICIALES
         float numColumnas = (transform.position.z - primerObstaculo) / distanciaObstaculos;
 
@@ -38,7 +39,7 @@ public class Instanciador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        intervalo2 = Random.Range(1f, 4f);
     }
 
     IEnumerator Instanciar ()
@@ -51,7 +52,7 @@ public class Instanciador : MonoBehaviour
             int randomNum = Random.Range(0, arrayObst.Length);
             if (arrayObst[randomNum].layer == 6)
             {
-                instanciaArray= new Vector3( Random.Range(-7f, 7f), 0f, initPos.position.z);
+                instanciaArray= new Vector3( Random.Range(-7f, 7f), 3f, initPos.position.z);
             } else {
                 instanciaArray = new Vector3(Random.Range(-7f, 7f), Random.Range(0, 6f), initPos.position.z);
             }
@@ -69,9 +70,9 @@ public class Instanciador : MonoBehaviour
 
         for (; ; )
         {
-            Vector3 instanciaAround = new Vector3(Random.Range(-70f, -7f), 0f, initPos.position.z);
-            Vector3 instanciaAround2 = new Vector3(Random.Range(7f, 70f), 0f, initPos.position.z + 1f);
-            print(instanciaAround2);
+            Vector3 instanciaAround = new Vector3(Random.Range(-120f, -9.5f), 0f, initPos.position.z);
+            Vector3 instanciaAround2 = new Vector3(Random.Range(9.5f, 120f), 0f, initPos.position.z + 1f);
+            
 
             int randomNum = Random.Range(0, arrayAround.Length);
        

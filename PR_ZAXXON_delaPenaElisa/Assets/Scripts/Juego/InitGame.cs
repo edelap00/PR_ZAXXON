@@ -15,7 +15,7 @@ public class InitGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     naveSpeed = 7f;
+        naveSpeed = GameManager.speed;
         
         
     }

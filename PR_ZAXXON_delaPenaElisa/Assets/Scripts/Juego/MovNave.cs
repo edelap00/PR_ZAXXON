@@ -8,17 +8,19 @@ public class MovNave : MonoBehaviour
 {
     //variables
     public float speedX = 5.0f;
-    public float speedY = 3.0f;
+    public float speedY = GameManager.speed;
     float limRight = 8;
     float limLeft = -8;
     float limUp = 6;
-    float limDown = 0.5f;
+    float limDown = -0.5f;
     bool inLimitH;
+    bool disparo;
     [SerializeField] bool inLimitV = true;
     InitGame initGame;
     // Start is called before the first frame update
     void Start()
     {
+        disparo = true;
         GameManager.punt = 0;
         transform.position = new Vector3(0, 0.7f, 0f);
 
@@ -32,8 +34,11 @@ public class MovNave : MonoBehaviour
     void Update()
     {
         MoverNave();
-    
 
+        if (disparo)
+        {
+            Disparar();
+        }
     }
 
     void MoverNave()
@@ -100,9 +105,18 @@ public class MovNave : MonoBehaviour
             case 7:
                 GameManager.punt++;
                 //Destroy(gameObject);
-                print("Tienes un punto! puntos:" + initGame.punt);
+                print("Tienes un punto! puntos:" + GameManager.punt);
                 break;
         }
         
+    }
+
+    private void Disparar()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            print("pium pium");
+        }
+
     }
 }
