@@ -39,7 +39,7 @@ public class Instanciador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        intervalo2 = Random.Range(1f, 4f);
+        intervalo2 = Random.Range(0.1f, 1.5f);
     }
 
     IEnumerator Instanciar ()

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 public class MovNave : MonoBehaviour
 
@@ -13,12 +15,15 @@ public class MovNave : MonoBehaviour
     public float speedY = GameManager.speed;
     float limRight = 15.5f;
     float limLeft = -15.5f;
-    float limUp = 6;
-    float limDown = -0.5f;
+    float limUp = 8;
+    float limDown = 0f;
     bool inLimitH;
     bool disparo;
     [SerializeField] bool inLimitV = true;
     InitGame initGame;
+    [SerializeField] Image fireSpr;
+    Color activado;
+    Color desactivado;
     [SerializeField] GameObject instanciaBala;
     [SerializeField] GameObject bolaFuego;
     [SerializeField] GameObject nube;
@@ -29,12 +34,16 @@ public class MovNave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        activado = new Color32(255, 228, 138, 255);
+        desactivado = new Color32(10, 10, 10, 255);
+
         audioSource = GetComponent<AudioSource>();
         disparo = true;
+        fireSpr.color = activado;
+        print(desactivado);
         GameManager.punt = 0;
         transform.position = new Vector3(0, 0.7f, 0f);
-
-       
         initGame = GameObject.Find("initGame").GetComponent<InitGame>();
         speedX = initGame.naveSpeed;
         speedY = initGame.naveSpeed * 0.5f;
@@ -48,7 +57,19 @@ public class MovNave : MonoBehaviour
         if (disparo)
         {
             Disparar();
+            
         }
+
+        /*
+        if (disparo && fireSpr.color == desactivado)
+        {
+            fireSpr.color = activado;
+        }
+        if (!disparo && fireSpr.color == activado)
+        {
+            fireSpr.color = desactivado;
+        }
+        */
     }
 
     void MoverNave()
@@ -130,6 +151,8 @@ public class MovNave : MonoBehaviour
             case 8:
                 audioSource.PlayOneShot(fire, 1f);
                 disparo = true;
+                fireSpr.color = activado;
+
                 //rend.enabled = false;
                 break;
             case 9:
@@ -152,6 +175,8 @@ public class MovNave : MonoBehaviour
             print("pium pium");
 
             disparo = false;
+            fireSpr.color = desactivado;
+
         }
 
     }
@@ -163,7 +188,8 @@ public class MovNave : MonoBehaviour
 
     IEnumerator EsperarMuerte()
     {
-        yield return new WaitForSeconds(0.2f);
+
+        yield return new WaitForSeconds(0.1f);
         initGame.Morir();
     }
 }
