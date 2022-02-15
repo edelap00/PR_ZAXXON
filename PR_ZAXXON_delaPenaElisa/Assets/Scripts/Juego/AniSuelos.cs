@@ -6,6 +6,7 @@ public class AniSuelos : MonoBehaviour
 {
     Renderer rend;
     float scrollVel = GameManager.speed;
+    [SerializeField] float velocidad;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class AniSuelos : MonoBehaviour
     void Update()
     {
         //Distancia de desplazamiento, según el tiempo transc.
-        float offset = (Time.time * scrollVel)/30;
+        float offset = Time.time * velocidad;
         //Vector de desplazamiento
         Vector2 despl = new Vector2(0, -offset);
         //Desplazamos la textura albedo y la normal

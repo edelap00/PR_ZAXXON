@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class MovNave : MonoBehaviour
 
 {
+    AudioSource audioSource;
+   
     //variables
-    public float speedX = 5.0f;
+    public float speedX = 10.0f;
     public float speedY = GameManager.speed;
     float limRight = 15.5f;
     float limLeft = -15.5f;
@@ -19,9 +21,15 @@ public class MovNave : MonoBehaviour
     InitGame initGame;
     [SerializeField] GameObject instanciaBala;
     [SerializeField] GameObject bolaFuego;
+    [SerializeField] GameObject nube;
+    [SerializeField] AudioClip powerUp;
+    [SerializeField] AudioClip columna;
+    [SerializeField] AudioClip monstruo;
+    [SerializeField] AudioClip fire;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         disparo = true;
         GameManager.punt = 0;
         transform.position = new Vector3(0, 0.7f, 0f);
@@ -95,16 +103,21 @@ public class MovNave : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         //print("kaboom");
 
+       // MeshRenderer rend = GetComponent<MeshRenderer>();
         switch (other.gameObject.layer)
         {
             case 6:
-               initGame.Morir();
+                audioSource.PlayOneShot(monstruo, 1f);
+                //Invoke("Morir()",2f);
+                //initGame.Morir();
+                StartCoroutine("EsperarMuerte");
                 break;
             case 7:
+                audioSource.PlayOneShot(powerUp, 1f);
                 GameManager.punt++;
                 Destroy(other.gameObject);
                 print("Tienes un punto! puntos:" + GameManager.punt);
@@ -115,8 +128,16 @@ public class MovNave : MonoBehaviour
                 break;
 
             case 8:
+                audioSource.PlayOneShot(fire, 1f);
+                disparo = true;
+                //rend.enabled = false;
                 break;
             case 9:
+                //columna
+                audioSource.PlayOneShot(columna, 1f);
+                Instantiate(nube, transform.position, Quaternion.identity);
+                //Invoke("Morir", 2f);
+                StartCoroutine("EsperarMuerte");
                 break;
         }
         
@@ -124,12 +145,25 @@ public class MovNave : MonoBehaviour
 
     private void Disparar()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)||Input.GetButtonDown("Fire1"))
         {
-            Instantiate(bolaFuego, instanciaBala.transform);
+            Instantiate(bolaFuego, instanciaBala.transform.position ,Quaternion.identity);
             
             print("pium pium");
+
+            disparo = false;
         }
 
+    }
+
+    public void Morir()
+    {
+        initGame.Morir();
+    }
+
+    IEnumerator EsperarMuerte()
+    {
+        yield return new WaitForSeconds(0.2f);
+        initGame.Morir();
     }
 }

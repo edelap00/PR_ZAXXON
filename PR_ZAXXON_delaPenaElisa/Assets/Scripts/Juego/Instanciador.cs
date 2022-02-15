@@ -25,7 +25,7 @@ public class Instanciador : MonoBehaviour
 
         for(float n= primerObstaculo; n <transform.position.z; n+=distanciaObstaculos)
         {
-            Vector3 initColPos = new Vector3(Random.Range(-7f, 7f), Random.Range(0, 5f), n);
+            Vector3 initColPos = new Vector3(Random.Range(-15f, 15f), Random.Range(0, 5f), n);
            
             int randomNum = Random.Range(0, arrayObst.Length);
             Instantiate(arrayObst[randomNum], initColPos, Quaternion.identity);
@@ -52,7 +52,7 @@ public class Instanciador : MonoBehaviour
             int randomNum = Random.Range(0, arrayObst.Length);
             if (arrayObst[randomNum].layer == 9)
             {
-                instanciaArray= new Vector3( Random.Range(-15f, 15f), 0f, initPos.position.z);
+                instanciaArray= new Vector3( Random.Range(-15f, 15f), 3f, initPos.position.z);
             } else {
                 instanciaArray = new Vector3(Random.Range(-15f, 15f), Random.Range(0.5f, 6.5f), initPos.position.z);
             }
