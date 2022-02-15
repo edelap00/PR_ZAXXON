@@ -39,10 +39,12 @@ public class MovNave : MonoBehaviour
         desactivado = new Color32(10, 10, 10, 255);
 
         audioSource = GetComponent<AudioSource>();
-        disparo = true;
+        disparo = true; //ojo, que iba antes de guardar
         fireSpr.color = activado;
         print(desactivado);
         GameManager.punt = 0;
+        GameManager.muertos = 0;
+        GameManager.globalPoints = 0;
         transform.position = new Vector3(0, 0.7f, 0f);
         initGame = GameObject.Find("initGame").GetComponent<InitGame>();
         speedX = initGame.naveSpeed;
@@ -132,6 +134,7 @@ public class MovNave : MonoBehaviour
         switch (other.gameObject.layer)
         {
             case 6:
+                Instantiate(nube, other.gameObject.transform.position, Quaternion.identity);
                 audioSource.PlayOneShot(monstruo, 1f);
                 //Invoke("Morir()",2f);
                 //initGame.Morir();
@@ -140,11 +143,12 @@ public class MovNave : MonoBehaviour
             case 7:
                 audioSource.PlayOneShot(powerUp, 1f);
                 GameManager.punt++;
+                GameManager.globalPoints++;
                 Destroy(other.gameObject);
-                print("Tienes un punto! puntos:" + GameManager.punt);
-                if (GameManager.punt > GameManager.highscore)
+                print("Tienes una gema! Gemas:" + GameManager.punt);
+                if (GameManager.globalPoints > GameManager.highscore)
                 {
-                    GameManager.highscore = GameManager.punt;
+                    GameManager.highscore = GameManager.globalPoints;
                 }
                 break;
 
@@ -157,6 +161,7 @@ public class MovNave : MonoBehaviour
                 break;
             case 9:
                 //columna
+                Instantiate(nube, other.gameObject.transform.position, Quaternion.identity);
                 audioSource.PlayOneShot(columna, 1f);
                 Instantiate(nube, transform.position, Quaternion.identity);
                 //Invoke("Morir", 2f);
@@ -188,8 +193,16 @@ public class MovNave : MonoBehaviour
 
     IEnumerator EsperarMuerte()
     {
-
+        //desactivar compenentes de scripts. ObstacMove, Ani suelo. si no puedo desactivar obst, cambiar velocidad.
         yield return new WaitForSeconds(0.1f);
         initGame.Morir();
+    }
+
+    IEnumerator FadeMusic()
+    {
+        //bajar audiomixer while sea mayor que 0.
+        yield return new WaitForSeconds(0.1f);
+        
+
     }
 }

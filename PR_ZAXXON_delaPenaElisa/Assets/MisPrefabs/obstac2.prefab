@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6952591381811041292}
-  - component: {fileID: -6612781491546955994}
   - component: {fileID: -921982500135525049}
   - component: {fileID: 8097529804323384543}
+  - component: {fileID: 1098118505965619007}
   m_Layer: 9
   m_Name: obstac2
   m_TagString: Untagged
@@ -36,20 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &-6612781491546955994
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2526424171432834710}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-921982500135525049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +145,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1098118505965619007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526424171432834710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7595522, y: 2.5112734, z: 0.7039229}
+  m_Center: {x: 0.023416096, y: 1.2234721, z: 0.0023125422}
 --- !u!1 &2580806961232547563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,10 +5240,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 65202500165153976, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7595522
+      objectReference: {fileID: 0}
+    - target: {fileID: 65202500165153976, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
+      propertyPath: m_Size.z
+      value: 0.7039229
+      objectReference: {fileID: 0}
+    - target: {fileID: 65202500165153976, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
+      propertyPath: m_Center.x
+      value: 0.023416096
+      objectReference: {fileID: 0}
+    - target: {fileID: 65202500165153976, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0023125422
+      objectReference: {fileID: 0}
+    - target: {fileID: 65202500165153976, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65202500165153976, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c50d7fe886123524b985153c4652c4bc, type: 3}
 --- !u!4 &8755470427979463163 stripped
 Transform:

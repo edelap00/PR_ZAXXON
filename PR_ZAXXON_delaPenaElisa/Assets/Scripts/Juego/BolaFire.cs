@@ -40,10 +40,14 @@ public class BolaFire : MonoBehaviour
         {
             case 6:
                 //enemigo
+                SphereCollider collider = other.gameObject.GetComponent<SphereCollider>();
                 audioSource.PlayOneShot(monstruo, 1f);
                 ani = other.GetComponent<Animator>();
                 ani.SetTrigger("morir");
+                Destroy(collider);
                 Destroy(other.gameObject, 1.5f);
+                GameManager.muertos++;
+                GameManager.globalPoints = GameManager.globalPoints + 2;
 
                 break;
             case 7:

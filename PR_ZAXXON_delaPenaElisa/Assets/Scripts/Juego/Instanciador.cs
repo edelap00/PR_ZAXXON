@@ -39,7 +39,7 @@ public class Instanciador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        intervalo2 = Random.Range(0.1f, 1.5f);
+        intervalo2 = Random.Range(0.1f, 0.9f);
     }
 
     IEnumerator Instanciar ()
@@ -75,10 +75,11 @@ public class Instanciador : MonoBehaviour
             
 
             int randomNum = Random.Range(0, arrayAround.Length);
-       
+            int randomNum2 = Random.Range(0, arrayAround.Length);
+
 
             Instantiate(arrayAround[randomNum], instanciaAround, Quaternion.identity);
-            Instantiate(arrayAround[randomNum], instanciaAround2, Quaternion.identity);
+            Instantiate(arrayAround[randomNum2], instanciaAround2, Quaternion.identity);
 
             yield return new WaitForSeconds(intervalo2);
         }

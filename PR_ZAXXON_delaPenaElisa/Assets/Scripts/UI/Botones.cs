@@ -9,6 +9,8 @@ public class Botones : MonoBehaviour
 
     [SerializeField] Text punt;
     [SerializeField] Text puntfin;
+    [SerializeField] Text muertos;
+    [SerializeField] Text global;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +30,14 @@ void Update()
 
         if (puntfin != null)
         {
-            puntfin.text = "Tu récord de hoy han sido " + GameManager.highscore + " gemas";
+            puntfin.text = "Récord: " + GameManager.highscore + " puntos";
         }
-        
-       
+        if (global != null)
+        {
+            global.text = "Global: " + GameManager.globalPoints + " puntos";
+        }
+
+
     }
 
    public void Salir()
