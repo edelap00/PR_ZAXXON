@@ -11,7 +11,7 @@ public class MovNave : MonoBehaviour
     AudioSource audioSource;
    
     //variables
-    public float speedX = 10.0f;
+    public float speedX = 17.0f;
     public float speedY = GameManager.speed;
     float limRight = 15.5f;
     float limLeft = -15.5f;
