@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class Botones : MonoBehaviour
 {
 
-    [SerializeField] Text punt;
+    [SerializeField] Text gem;
     [SerializeField] Text puntfin;
     [SerializeField] Text muertos;
-    [SerializeField] Text global;
+    [SerializeField] Text punt;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +23,23 @@ public class Botones : MonoBehaviour
 void Update()
     {
         
-        if (punt != null)
+        if (gem != null)
         {
-            punt.text = "Gemas: " + GameManager.punt;
+            gem.text = "Gemas: " + GameManager.punt;
         }
 
         if (puntfin != null)
         {
-            puntfin.text = "Récord: " + GameManager.highscore + " puntos";
+            puntfin.text = "Tu récord de hoy ha sido: " + GameManager.highscore + " puntos ";
         }
-        if (global != null)
+        if (punt != null)
         {
-            global.text = "Global: " + GameManager.globalPoints + " puntos";
+            punt.text = " " + GameManager.globalPoints+ " ";
+        }
+
+        if (muertos != null)
+        {
+            muertos.text = "Muertos: " + GameManager.muertos;
         }
 
 
