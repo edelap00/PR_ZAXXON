@@ -51,7 +51,7 @@ MonoBehaviour:
   nube: {fileID: 403416993282758158, guid: d5ed855ec7378484f978d758c3c87a8d, type: 3}
   powerUp: {fileID: 8300000, guid: 668dff16d54b9a44e9772bbfddbed7d4, type: 3}
   columna: {fileID: 8300000, guid: 9c93596475244754096c2eafc56f7d86, type: 3}
-  monstruo: {fileID: 8300000, guid: 2e068fece14c92a49961c64a9aaa3c43, type: 3}
+  monstruo: {fileID: 8300000, guid: b942220b7fdd9c146b2356b608141e65, type: 3}
 --- !u!135 &8759018766027639812
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -99,12 +99,12 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 61
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0
+  MaxDistance: 37.27
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -137,7 +137,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -222,7 +222,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -264,7 +264,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -20,7 +20,7 @@ public class ObstacMove : MonoBehaviour
     {
      
         transform.Translate(Vector3.back * Time.deltaTime*initGame.naveSpeed);
-        if (transform.position.z < -3)
+        if (transform.position.z < -10)
         {
             Destroy(gameObject);
         }

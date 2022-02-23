@@ -41,11 +41,11 @@ public class BolaFire : MonoBehaviour
             case 6:
                 //enemigo
                 SphereCollider collider = other.gameObject.GetComponent<SphereCollider>();
-                audioSource.PlayOneShot(monstruo, 1f);
+                audioSource.PlayOneShot(monstruo, 0.85f);
                 ani = other.GetComponent<Animator>();
                 ani.SetTrigger("morir");
                 Destroy(collider);
-                Destroy(other.gameObject, 1.5f);
+                Destroy(other.gameObject, 1f);
                 GameManager.muertos++;
                 GameManager.globalPoints = GameManager.globalPoints + 2;
                 if (GameManager.globalPoints > GameManager.highscore)
@@ -56,7 +56,7 @@ public class BolaFire : MonoBehaviour
                 break;
             case 7:
                 //powerupGema
-                audioSource.PlayOneShot(powerUp, 1f);
+                audioSource.PlayOneShot(powerUp, 0.6f);
                 Destroy(other.gameObject);
                 break;
                 
@@ -75,7 +75,7 @@ public class BolaFire : MonoBehaviour
         }
 
 
-        Destroy(gameObject);
+        Destroy(gameObject,0.5f);
        // Destroy(nube, 3f);
 
     }

@@ -6,8 +6,8 @@ public class Instanciador : MonoBehaviour
 {
     [SerializeField] GameObject obst;
     [SerializeField] Transform initPos;
-    [SerializeField] float intervalo ;
-    [SerializeField] float intervalo2;
+     float intervalo ;
+     float intervalo2;
     //variable columnas iniciales
     float distanciaObstaculos = 20;
     float primerObstaculo = 30f;
@@ -18,7 +18,7 @@ public class Instanciador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        intervalo = 2f;
+        intervalo = 1f;
         
         //COLUMNAS INICIALES
         float numColumnas = (transform.position.z - primerObstaculo) / distanciaObstaculos;
@@ -30,7 +30,21 @@ public class Instanciador : MonoBehaviour
             int randomNum = Random.Range(0, arrayObst.Length);
             Instantiate(arrayObst[randomNum], initColPos, Quaternion.identity);
         }
-        
+
+        for (float n = primerObstaculo; n < transform.position.z; n += distanciaObstaculos)
+        {
+            Vector3 instanciaAround = new Vector3(Random.Range(-190f, -16f), -0.1f, n);
+            Vector3 instanciaAround2 = new Vector3(Random.Range(16f, 190f), -0.1f, n);
+
+
+            int randomNum = Random.Range(0, arrayAround.Length);
+            int randomNum2 = Random.Range(0, arrayAround.Length);
+
+
+            Instantiate(arrayAround[randomNum], instanciaAround, Quaternion.identity);
+            Instantiate(arrayAround[randomNum2], instanciaAround2, Quaternion.identity);
+        }
+
         //INSTANCIAS DEL MÄS ALLÄ
         StartCoroutine("Instanciar");
         StartCoroutine("InstanceAround");
@@ -54,7 +68,7 @@ public class Instanciador : MonoBehaviour
             {
                 instanciaArray= new Vector3( Random.Range(-15f, 15f), 3f, initPos.position.z);
             } else {
-                instanciaArray = new Vector3(Random.Range(-15f, 15f), Random.Range(0.5f, 6.5f), initPos.position.z);
+                instanciaArray = new Vector3(Random.Range(-15f, 15f), Random.Range(1.5f, 7f), initPos.position.z);
             }
 
             Instantiate(arrayObst[randomNum], instanciaArray, Quaternion.identity);
@@ -70,8 +84,8 @@ public class Instanciador : MonoBehaviour
 
         for (; ; )
         {
-            Vector3 instanciaAround = new Vector3(Random.Range(-120f, -16f), 0f, initPos.position.z);
-            Vector3 instanciaAround2 = new Vector3(Random.Range(16f, 120f), 0f, initPos.position.z + 1f);
+            Vector3 instanciaAround = new Vector3(Random.Range(-190f, -16f), -0.1f, initPos.position.z);
+            Vector3 instanciaAround2 = new Vector3(Random.Range(16f, 190f), -0.1f, initPos.position.z + 1f);
             
 
             int randomNum = Random.Range(0, arrayAround.Length);

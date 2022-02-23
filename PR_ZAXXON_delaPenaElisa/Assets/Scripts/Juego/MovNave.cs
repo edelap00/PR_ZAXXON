@@ -11,8 +11,8 @@ public class MovNave : MonoBehaviour
     AudioSource audioSource;
    
     //variables
-    public float speedX = 17.0f;
-    public float speedY = GameManager.speed;
+    float speedX = 10f;
+    float speedY = 10f;
     float limRight = 15.5f;
     float limLeft = -15.5f;
     float limUp = 8;
@@ -47,8 +47,7 @@ public class MovNave : MonoBehaviour
         GameManager.globalPoints = 0;
         transform.position = new Vector3(0, 0.7f, 0f);
         initGame = GameObject.Find("initGame").GetComponent<InitGame>();
-        speedX = initGame.naveSpeed;
-        speedY = initGame.naveSpeed * 0.5f;
+       
     }
 
     // Update is called once per frame
@@ -141,7 +140,7 @@ public class MovNave : MonoBehaviour
                 StartCoroutine("EsperarMuerte");
                 break;
             case 7:
-                audioSource.PlayOneShot(powerUp, 1f);
+                audioSource.PlayOneShot(powerUp, 0.4f);
                 GameManager.punt++;
                 GameManager.globalPoints++;
                 Destroy(other.gameObject);
@@ -153,7 +152,11 @@ public class MovNave : MonoBehaviour
                 break;
 
             case 8:
-                audioSource.PlayOneShot(fire, 1f);
+                if (!disparo)
+                {
+                    audioSource.PlayOneShot(fire, 0.7f);
+                }
+               
                 disparo = true;
                 fireSpr.color = activado;
 
@@ -162,7 +165,7 @@ public class MovNave : MonoBehaviour
             case 9:
                 //columna
                 Instantiate(nube, other.gameObject.transform.position, Quaternion.identity);
-                audioSource.PlayOneShot(columna, 1f);
+                audioSource.PlayOneShot(columna, 0.7f);
                 Instantiate(nube, transform.position, Quaternion.identity);
                 //Invoke("Morir", 2f);
                 StartCoroutine("EsperarMuerte");
