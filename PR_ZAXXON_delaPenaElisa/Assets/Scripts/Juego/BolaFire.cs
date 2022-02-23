@@ -48,6 +48,10 @@ public class BolaFire : MonoBehaviour
                 Destroy(other.gameObject, 1.5f);
                 GameManager.muertos++;
                 GameManager.globalPoints = GameManager.globalPoints + 2;
+                if (GameManager.globalPoints > GameManager.highscore)
+                {
+                    GameManager.highscore = GameManager.globalPoints;
+                }
 
                 break;
             case 7:
