@@ -280,7 +280,7 @@ AudioSource:
   m_GameObject: {fileID: 9243810}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8605405327988868499, guid: e6c19a30536e3934abc6fca295237915, type: 2}
   m_audioClip: {fileID: 8300000, guid: e01615a906f08cb4c94a1d72f8113843, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1280,6 +1280,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736011902}
   m_CullTransparentMesh: 1
+--- !u!1 &862896801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862896802}
+  - component: {fileID: 862896804}
+  - component: {fileID: 862896803}
+  m_Layer: 5
+  m_Name: PuntosBox (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &862896802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862896801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.90172, y: 0.90172, z: 0.90172}
+  m_Children: []
+  m_Father: {fileID: 1187909477}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000014305115, y: -0.000030517578}
+  m_SizeDelta: {x: 357, y: 406}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &862896803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862896801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9433962, g: 0.897854, b: 0.83214664, a: 0.5019608}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &862896804
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862896801}
+  m_CullTransparentMesh: 1
 --- !u!1 &886721650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +2022,7 @@ RectTransform:
   m_LocalScale: {x: 0.78093666, y: 0.52383876, z: 0.6173412}
   m_Children:
   - {fileID: 957213246}
+  - {fileID: 862896802}
   - {fileID: 1743301648}
   m_Father: {fileID: 2030816866}
   m_RootOrder: 1
@@ -2573,7 +2649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724485247}
   m_LocalRotation: {x: 0.040248696, y: -0.7059603, z: 0.040248614, w: 0.7059604}
-  m_LocalPosition: {x: -260.30054, y: 61.34533, z: 0}
+  m_LocalPosition: {x: -446, y: 85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486942694041268809}
@@ -2615,7 +2691,7 @@ RectTransform:
   m_LocalScale: {x: 1.2805136, y: 1.9089844, z: 1.6198497}
   m_Children: []
   m_Father: {fileID: 1187909477}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2660,8 +2736,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dab90a45cedf47b4291bd9816c597551, type: 3}
-    m_FontSize: 55
-    m_FontStyle: 0
+    m_FontSize: 67
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 192
@@ -2671,7 +2747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 1000
 --- !u!222 &1743301651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3349,11 +3425,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486942694040935215}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 734.70703, y: 327.11713, z: 37.62}
-  m_Center: {x: -359.86298, y: -157.86374, z: 0.00002685992}
+  m_Size: {x: 844.1315, y: 327.11713, z: 37.62}
+  m_Center: {x: -414.57495, y: -157.86382, z: 0.00013620188}
 --- !u!1 &486942694040936111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,7 +3859,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486942694040954003}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.72687, y: 4.2232804, z: 5.1964264}
@@ -4013,11 +4089,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486942694040958995}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 363.33328, y: 374.3739, z: 37.83}
-  m_Center: {x: -183.90585, y: 179.62596, z: -0.00079943665}
+  m_Size: {x: 363.33328, y: 465.5742, z: 37.83}
+  m_Center: {x: -183.90584, y: 134.02528, z: -0.0012529867}
 --- !u!1 &486942694040959109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4283,11 +4359,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486942694040970071}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 363.33328, y: 433.59888, z: 37.83}
-  m_Center: {x: -183.90585, y: -98.27229, z: -0.000117598865}
+  m_Size: {x: 363.33328, y: 485.97372, z: 37.83}
+  m_Center: {x: -183.90584, y: -72.08427, z: -0.00030429033}
 --- !u!1 &486942694040971045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,11 +5347,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486942694041184857}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 734.70685, y: 352.5311, z: 37.62}
-  m_Center: {x: -359.86295, y: 151.97499, z: -0.00001731314}
+  m_Size: {x: 817.61816, y: 352.53104, z: 37.62}
+  m_Center: {x: -401.31848, y: 151.97481, z: -0.00009795252}
 --- !u!1 &486942694041187465
 GameObject:
   m_ObjectHideFlags: 0

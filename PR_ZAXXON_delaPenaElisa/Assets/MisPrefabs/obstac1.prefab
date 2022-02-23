@@ -110,8 +110,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6477542
-  m_Center: {x: 0, y: 0, z: -0.1477542}
+  m_Radius: 0.654803
+  m_Center: {x: 0, y: 0.0070487857, z: -0.14775419}
 --- !u!95 &857391151138710525
 Animator:
   serializedVersion: 3
@@ -140,7 +140,7 @@ AudioSource:
   m_GameObject: {fileID: 4699895235064738158}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3830643442198970576, guid: e6c19a30536e3934abc6fca295237915, type: 2}
   m_audioClip: {fileID: 8300000, guid: 47f9c5e1a97dfd44fb6c941e35eb836f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.429
