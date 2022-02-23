@@ -159,7 +159,7 @@ public class MovNave : MonoBehaviour
                
                 disparo = true;
                 fireSpr.color = activado;
-
+                Destroy(other.gameObject);
                 //rend.enabled = false;
                 break;
             case 9:

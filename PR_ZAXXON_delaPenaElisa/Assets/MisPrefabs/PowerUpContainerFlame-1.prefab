@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 5465357982643821261}
   m_Layer: 8
   m_Name: PowerUpContainerFlame-1
-  m_TagString: Untagged
+  m_TagString: lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

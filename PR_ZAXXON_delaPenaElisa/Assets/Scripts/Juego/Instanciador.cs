@@ -29,6 +29,7 @@ public class Instanciador : MonoBehaviour
            
             int randomNum = Random.Range(0, arrayObst.Length);
             Instantiate(arrayObst[randomNum], initColPos, Quaternion.identity);
+
         }
 
         for (float n = primerObstaculo; n < transform.position.z; n += distanciaObstaculos)
@@ -58,7 +59,7 @@ public class Instanciador : MonoBehaviour
 
     IEnumerator Instanciar ()
     {
-        Vector3 instanciaArray = new Vector3 ( Random.Range(-15f, 15f), Random.Range(0, 5f), initPos.position.z);
+        Vector3 instanciaArray = new Vector3 ( Random.Range(-15f, 15f), Random.Range(1.7f, 7f), initPos.position.z);
 
         for (; ; )
         {

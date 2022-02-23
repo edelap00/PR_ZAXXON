@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuegoSpeed: 15
   nube: {fileID: 403416993282758158, guid: d5ed855ec7378484f978d758c3c87a8d, type: 3}
+  hijo: {fileID: 8735397266948082258}
   powerUp: {fileID: 8300000, guid: 668dff16d54b9a44e9772bbfddbed7d4, type: 3}
   columna: {fileID: 8300000, guid: 9c93596475244754096c2eafc56f7d86, type: 3}
   monstruo: {fileID: 8300000, guid: b942220b7fdd9c146b2356b608141e65, type: 3}

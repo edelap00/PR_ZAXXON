@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.2264151, g: 0, b: 0, a: 1}
+  m_FogColor: {r: 0.1981132, g: 0.039105352, b: 0.00074758223, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.002
+  m_FogDensity: 0.001
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -547,11 +547,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410975226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.099999994, z: 0}
+  m_LocalPosition: {x: 0, y: 0.099999994, z: 9.771561}
   m_LocalScale: {x: 0.057506334, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1299845967}
-  m_RootOrder: 0
+  m_Father: {fileID: 505099461}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &410975228
 MonoBehaviour:
@@ -790,6 +790,7 @@ Transform:
   m_LocalScale: {x: 54.652985, y: 1, z: 20.815508}
   m_Children:
   - {fileID: 1501879628}
+  - {fileID: 410975227}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1119,13 +1120,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.13480455, y: -0.9766535, z: 0.16560468, w: 0.023466669}
+  m_LocalRotation: {x: 0.1315072, y: -0.98878616, z: 0.05982514, w: 0.037799515}
   m_LocalPosition: {x: 0.66, y: 7.68, z: 13.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 19.257, y: -179.928, z: -15.705}
+  m_LocalEulerAnglesHint: {x: 7.369, y: -176.588, z: -14.932}
 --- !u!1 &719557671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1874,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.46274513, g: 0.24705884, b: 0.24705884, a: 0.2784314}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1888,7 +1889,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1042.6
-  field of view: 60
+  field of view: 72
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2380,8 +2381,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.28, z: 303}
   m_LocalScale: {x: 54.652985, y: 1, z: 20.815508}
-  m_Children:
-  - {fileID: 410975227}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

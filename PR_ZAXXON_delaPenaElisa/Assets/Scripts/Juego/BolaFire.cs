@@ -8,9 +8,11 @@ public class BolaFire : MonoBehaviour
     Animator ani;
     [SerializeField] float fuegoSpeed = 45f;
     [SerializeField] GameObject nube;
+    [SerializeField] GameObject hijo;
     [SerializeField] AudioClip powerUp;
     [SerializeField] AudioClip columna;
     [SerializeField] AudioClip monstruo;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -73,8 +75,7 @@ public class BolaFire : MonoBehaviour
                 
                 break;
         }
-
-
+        Destroy(hijo);
         Destroy(gameObject,0.5f);
        // Destroy(nube, 3f);
 
